@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video</title>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <style>
+        /* Styling the buttons */
+        #controls {
+            margin-top: 20px;
+            text-align: center;
+        }
+        button {
+            background-color: #003366; /* Green background */
+            color: white; /* White text */
+            border: none;
+            padding: 15px 32px;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+            transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+        }
+
+        button:hover {
+            background-color: #0253a3; /* Darker green on hover */
+            transform: translateY(-4px); /* Slight lift effect on hover */
+        }
+
+        button:active {
+            transform: translateY(2px); /* Slight press effect when clicked */
+        }
+
+        /* Container for the video player */
+        #player {
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Centering the page content */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9; /* Light background color */
+        }
+
+        h1 {
+            color: #333; /* Dark text color for the title */
+        }
+    </style>
+</head>
+<body>
+    <h1>TalTech - Tallinn University of Technology</h1>
+
+    <!-- Container for the YouTube video -->
+    <div id="player"></div>
+
+    <!-- Buttons for play, pause and home -->
+    <div id="controls">
+        <button onclick="playVideo()">Play</button>
+        <button onclick="pauseVideo()">Pause</button>
+        <!-- Home button that redirects to home.html -->
+        <button onclick="window.location.href='home.html'">Home</button>
+    </div>
+
+    <script>
+        // Variable to store the YouTube player instance
+        let player;
+
+        // Function to create the YouTube player
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '450',  // Increased height
+                width: '800',   // Increased width
+                videoId: 'qwc2kgdUF3g',
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
+        }
+
+        // Function to play the video
+        function playVideo() {
+            player.playVideo();
+        }
+
+        // Function to pause the video
+        function pauseVideo() {
+            player.pauseVideo();
+        }
+
+        // Function that gets called when the player is ready
+        function onPlayerReady(event) {
+            // The video is ready to be played
+        }
+    </script>
+
+</body>
+</html>

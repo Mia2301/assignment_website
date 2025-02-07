@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Events</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <a href="#">University Events</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="#events"><i class="fas fa-calendar-alt"></i> Events</a></li>
+                <li><a href="#registration"><i class="fas fa-pen"></i> Registration</a></li>
+                <li><a href="#contact"><i class="fas fa-phone-alt"></i> Contact</a></li>
+                <li><a href="quizz.html"><i class="fas fa-question-circle"></i> Quizz</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="home-section">
+        <div class="home-content">
+            <h1>Welcome to Our University</h1>
+            <p>Explore our events, join our community, and be part of something extraordinary.</p>
+            <a href="#events" class="btn-primary">See Events</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="about-content"><br>
+            <h2>About Us</h2>
+            <p>Our university is dedicated to fostering excellence in education and creating opportunities for personal and professional growth. We offer a wide range of academic programs, extracurricular activities, and community initiatives that empower our students to reach their full potential.</p>
+            <p>With a rich history of academic achievement and a commitment to innovation, our institution is at the forefront of research and education. Join us and become part of a dynamic community of learners and leaders.</p>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="events-section">
+        <div class="events-content"><br>
+            <h2>Upcoming Events</h2>
+            <p>Join us for a variety of engaging and educational events throughout the year. Explore the opportunities to grow, learn, and connect with our community.</p>
+            
+            <div class="events-list">
+                <!-- Event 1 -->
+                <div class="event-item">
+                    <img src="images/openday.jpg" alt="Event 1">
+                    <div class="event-info">
+                        <h3>University Open Day</h3>
+                        <p>Join us for University open day to explore our campus, meet lecturers and students,and learn about our programs and scholarships.
+                            Attend ineractive sessions, get admissions guidance, and experience university life firsthand! 
+                        </p>
+                        <span class="event-date">February 10, 2025</span>
+                    </div>
+                </div>
+
+                <!-- Event 2 -->
+                <div class="event-item">
+                    <img src="images/conference.jpg" alt="Event 2">
+                    <div class="event-info">
+                        <h3>Annual Science Conference</h3>
+                        <p>Join us for the Annul Science Conference,at the "CONFERENCE HALL" of the university, where researchers, students and industry experts
+                            come together to share groundbreaking ideas and innovations. Explore insightful talks, ineractive sessions, and networking opportunities
+                            across various scientific fields.
+                        </p>
+                        <span class="event-date">March 15, 2025</span>
+                    </div>
+                </div>
+
+                <!-- Event 3 -->
+                <div class="event-item" onclick="window.location.href='video.html';">
+                    <img src="images/tech.jpeg" alt="Event 3">
+                    <div class="event-info">
+                        <h3>Tech Innovation Workshop</h3>
+                        <p>Don't miss the Tehc Innovation Workshop at Campus, where creativity meets technology!
+                        Explore the latest trends, participate in hands-on sessions, and network with industry experts and innovators.
+                        Whether you're student, entrepreuneur,or tech entusiast, this is your chance to learn, collaborate and bring ideas to life!
+                        </p>
+                        <span class="event-date">April 5, 2025</span>
+                    </div>
+                </div>
+                
+
+                <!-- Event 4 -->
+                <div class="event-item">
+                    <img src="images/graduation.jpeg" alt="Event 4">
+                    <div class="event-info">
+                        <h3>University Graduation</h3>
+                        <p>Celebrate the achievements of our graduates at the university graduation ceremony. This special occasion brings together family,
+                            friends and faculty to honnor years of dedication and hard work. As students step into the next chapter of their journey, this 
+                            memorable event marks a proud milestone in their lives.
+                        </p>
+                        <span class="event-date">May 20, 2025</span>
+                    </div>
+                    
+                </div>
+
+                <!-- Event 5 -->
+                <div class="event-item">
+                    <img src="images/sport.jpg" alt="Event 5">
+                    <div class="event-info">
+                        <h3>Annual Sports Tournament</h3>
+                        <p>This Annual Sports tournament brings together athletes, teams, and sports enthusiasts for a thrilling competition.
+                            With a lineup of exciting matches, teamwork, and sportsmanship, this event promises high energy and unforgettable
+                            moments. Cheer for favorite teams and be part of the action.
+                        </p>
+                        <span class="event-date">June 18, 2025</span>
+                    </div>
+                </div>
+
+                <!-- Event 6 -->
+                <div class="event-item">
+                    <img src="images/music.jpg" alt="Event 6">
+                    <div class="event-info">
+                        <h3>Music and Arts Festival</h3>
+                        <p>This event is a celebration of creativity, featuring live performances, stunning art displays and ineractive experiences.
+                            With talented musicians, artists and performers showcasing their work, this event promises an inspiring atmosphere filled with music,
+                            color, and expression. Don't miss this vibrant celebration of the arts!
+                        </p>
+                        <span class="event-date">July 25, 2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="registration" class="registration-section">
+        <div class="registration-form-container">
+            <h2>Registration</h2>
+            <form class="registration-form" onsubmit="return validateForm(event)">
+                <!-- NIC -->
+                <div class="form-group">
+                    <label for="nic">National ID Number (NIC)</label>
+                    <input type="text" id="nic" name="nic" placeholder="Enter your NIC" required>
+                    <span id="nic-error" class="error-message"></span>
+                </div>
+        
+                <!-- Gender -->
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender" required>
+                        <option value="" disabled selected>Select your gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <span id="gender-error" class="error-message"></span>
+                </div>
+        
+                <!-- First Name -->
+                <div class="form-group">
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" name="first-name" placeholder="Enter your first name" required>
+                    <span id="first-name-error" class="error-message"></span>
+                </div>
+        
+                <!-- Last Name -->
+                <div class="form-group">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" name="last-name" placeholder="Enter your last name" required>
+                    <span id="last-name-error" class="error-message"></span>
+                </div>
+        
+                <!-- Phone Number -->
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                    <span id="phone-error" class="error-message"></span>
+                </div>
+        
+                <!-- Email Address -->
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    <span id="email-error" class="error-message"></span>
+                </div>
+        
+                <!-- Country -->
+                <div class="form-group">
+                    <label for="country">Country</label>
+                    <input type="text" id="country" name="country" placeholder="Enter your country" required>
+                    <span id="country-error" class="error-message"></span>
+                </div>
+        
+                <!-- Username -->
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Choose a username" required>
+                    <span id="username-error" class="error-message"></span>
+                </div>
+        
+                <!-- Password -->
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Choose a password" required>
+                    <span id="password-error" class="error-message"></span>
+                </div>
+        
+                <!-- Confirm Password -->
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+                    <span id="confirm-password-error" class="error-message"></span>
+                </div>
+        
+                <!-- Register and Reset Buttons -->
+                <div class="form-buttons">
+                    <button type="submit" class="btn-register">Register</button>
+                    <button type="reset" class="btn-reset" onclick="confirmReset(event)">Reset</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    
+    <section id="contact" class="contact-section">
+        <div class="contact-info">
+            <h2><br>Contact Us</h2>
+            <p>If you have any questions or concerns, feel free to reach out to us. We're here to help!</p>
+            <div class="contact-details">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>123 University Avenue, City, Country</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <p>+1 234 567 890</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>contact@university.com</p>
+                </div>
+            </div>
+        </div>
+         <!-- Formulaire de contact -->
+         <div class="contact-form-container">
+            <form class="contact-form" action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" placeholder="Subject of your inquiry" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" placeholder="Write your message" rows="5" required></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        function validateForm(event) {
+            // Empêcher l'envoi du formulaire si une erreur est présente
+            let isValid = true;
+    
+            // Validation NIC: doit avoir 10 caractères
+            const nic = document.getElementById('nic').value;
+            if (nic.length !== 10 || isNaN(nic)) {
+                document.getElementById('nic-error').textContent = 'NIC must be exactly 10 digits.';
+                isValid = false;
+            } else {
+                document.getElementById('nic-error').textContent = '';
+            }
+    
+            // Validation Prénom: seulement des lettres
+            const firstName = document.getElementById('first-name').value;
+            if (!/^[a-zA-Z]+$/.test(firstName)) {
+                document.getElementById('first-name-error').textContent = 'First Name must contain only letters.';
+                isValid = false;
+            } else {
+                document.getElementById('first-name-error').textContent = '';
+            }
+    
+        // Validation du champ Last Name: doit commencer par une majuscule et contenir seulement des lettres
+        const lastName = document.getElementById('last-name').value;
+        if (!/^[A-Z][a-zA-Z]*$/.test(lastName)) {
+            document.getElementById('last-name-error').textContent = 'Last Name must start with an uppercase letter and contain only letters.';
+            isValid = false;
+        } else {
+            document.getElementById('last-name-error').textContent = '';
+        }
+    
+            // Validation Téléphone: doit avoir exactement 7 chiffres
+            const phone = document.getElementById('phone').value;
+            if (!/^\d{8}$/.test(phone)) {
+                document.getElementById('phone-error').textContent = 'Phone number must be exactly 8 digits.';
+                isValid = false;
+            } else {
+                document.getElementById('phone-error').textContent = '';
+            }
+    
+            // Validation Email
+            const email = document.getElementById('email').value;
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (!emailPattern.test(email)) {
+                document.getElementById('email-error').textContent = 'Email must be in the format username@domain.com';
+                isValid = false;
+            } else {
+                document.getElementById('email-error').textContent = '';
+            }
+    
+            // Validation Username: Plus de 8 caractères
+            const username = document.getElementById('username').value;
+            if (username.length <= 8) {
+                document.getElementById('username-error').textContent = 'Username must be at least 8 characters long.';
+                isValid = false;
+            } else {
+                document.getElementById('username-error').textContent = '';
+            }
+    
+            // Validation Password et Confirm Password
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            if (password !== confirmPassword) {
+                document.getElementById('confirm-password-error').textContent = 'Passwords do not match.';
+                isValid = false;
+            } else {
+                document.getElementById('confirm-password-error').textContent = '';
+            }
+    
+            return isValid; // Empêche l'envoi du formulaire si une erreur est présente
+        }
+    
+        function confirmReset(event) {
+            if (!confirm('Are you sure you want to reset the form?')) {
+                event.preventDefault();
+            }
+        }
+    </script>
+    
+    
+    
+        
+
+
+    
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 University Events | All Rights Reserved</p>
+    </footer>
+
+    <!-- Script de Font Awesome pour les icônes -->
+    <script>
+        // Fonction pour vérifier la section en cours
+        function updateHeaderOnScroll() {
+          const header = document.querySelector('header');
+          const homeSection = document.querySelector('#home');
+          const aboutSection = document.querySelector('#about');
+          const eventsSection = document.querySelector('#events');
+          const registerSection = document.querySelector('#register');
+          const contactSection = document.querySelector('#contact');
+      
+          // Vérification de la position de la page
+          const scrollPosition = window.scrollY;
+          const homeOffset = homeSection.offsetTop;
+          const aboutOffset = aboutSection.offsetTop;
+          const eventsOffset = eventsSection.offsetTop;
+          const registerOffset = registerSection.offsetTop;
+          const contactOffset = contactSection.offsetTop;
+      
+          // Si l'on est dans la section "Home", on rend le header transparent
+          if (scrollPosition >= homeOffset && scrollPosition < aboutOffset) {
+            header.classList.remove('scrolled');
+          }
+          // Si l'on est dans une autre section, on change la couleur du header
+          else if (scrollPosition >= aboutOffset && scrollPosition < eventsOffset) {
+            header.classList.add('scrolled');
+            header.style.backgroundColor = '#f4f4f4'; // Couleur de fond pour "about"
+          }
+          else if (scrollPosition >= eventsOffset && scrollPosition < registerOffset) {
+            header.classList.add('scrolled');
+            header.style.backgroundColor = '#f9f9f9'; // Couleur de fond pour "events"
+          }
+          else if (scrollPosition >= registerOffset && scrollPosition < contactOffset) {
+            header.classList.add('scrolled');
+            header.style.backgroundColor = '#e9e9e9'; // Couleur de fond pour "register"
+          }
+          else if (scrollPosition >= contactOffset) {
+            header.classList.add('scrolled');
+            header.style.backgroundColor = '#d9d9d9'; // Couleur de fond pour "contact"
+          }
+        }
+      
+        // Appel de la fonction lors du défilement de la page
+        window.addEventListener('scroll', updateHeaderOnScroll);
+      
+        // Appel de la fonction au chargement de la page pour initialiser
+        document.addEventListener('DOMContentLoaded', updateHeaderOnScroll);
+      </script>
+      
+
+</body>
+</html>

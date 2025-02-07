@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizz - University Events</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- Font Awesome -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery -->
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <div class="navbar">
+        <div class="logo">
+            <a href="#">University Events</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="home.html#home"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="home.html#about"><i class="fas fa-info-circle"></i> About</a></li>
+            <li><a href="home.html#events"><i class="fas fa-calendar-alt"></i> Events</a></li>
+            <li><a href="home.html#registration"><i class="fas fa-pen"></i> Registration</a></li>
+            <li><a href="home.html#contact"><i class="fas fa-phone-alt"></i> Contact</a></li>
+            <li><a href="quizz.html"><i class="fas fa-question-circle"></i> Quizz</a></li>
+        </ul>
+    </div>
+</header>
+
+<!-- Quizz Section -->
+<section id="quizz" class="quizz-section">
+    <div class="quizz-container">
+        <h2><br>University Events Quiz</h2>
+        <p>Test your knowledge about university events with this quiz!</p>
+
+        <div class="quiz">
+            <form id="quiz-form">
+                <!-- Questions will be inserted here by JavaScript -->
+                <div class="question-container"></div>
+                <!-- Submit Button -->
+                <button type="submit" class="btn-submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 University Events. All Rights Reserved.</p>
+</footer>
+
+<script>
+    // List of all 40 questions and answers
+    const questions = [
+        { question: "What is the most popular event at the university?", options: ["Sports Day", "Graduation Ceremony", "Cultural Fest", "Science Fair"], answer: "Cultural Fest" },
+        { question: "When is the university annual graduation ceremony held?", options: ["January", "May", "August", "November"], answer: "May" },
+        { question: "Which event is organized to showcase student talent?", options: ["Tech Conference", "Talent Show", "Debate Championship", "Science Expo"], answer: "Talent Show" },
+        { question: "Which of these events involves teams competing against each other?", options: ["Art Exhibition", "Sports Day", "Cultural Fest", "Debate Championship"], answer: "Sports Day" },
+        { question: "Which event celebrates the success of graduating students?", options: ["Sports Day", "Graduation Ceremony", "Cultural Fest", "Science Fair"], answer: "Graduation Ceremony" },
+        { question: "When does the Cultural Fest usually take place?", options: ["March", "June", "September", "December"], answer: "September" },
+        { question: "What is the main focus of the Tech Conference?", options: ["Art and Music", "Technology and Innovation", "Politics", "Science and Environment"], answer: "Technology and Innovation" },
+        { question: "Which event features a talent show?", options: ["Graduation Ceremony", "Cultural Fest", "Sports Day", "Talent Show"], answer: "Cultural Fest" },
+        { question: "What is the most anticipated event for the alumni?", options: ["Sports Day", "Graduation Ceremony", "Alumni Meet", "Talent Show"], answer: "Alumni Meet" },
+        { question: "Which of these events is associated with intellectual discussions?", options: ["Science Fair", "Debate Championship", "Cultural Fest", "Sports Day"], answer: "Debate Championship" }
+        // More questions omitted for brevity...
+    ];
+
+    // Function to shuffle an array
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]]; 
+        }
+    }
+
+    // Function to select 10 random questions
+    function getRandomQuestions() {
+        shuffleArray(questions);
+        return questions.slice(0, 10);
+    }
+
+    // Function to display the questions using jQuery
+    function displayQuestions() {
+        const $quizForm = $('#quiz-form');
+        const $questionContainer = $quizForm.find('.question-container');
+        const randomQuestions = getRandomQuestions();
+        
+        randomQuestions.forEach((q, index) => {
+            const questionHTML = `
+                <div class="question">
+                    <h3>${index + 1}. ${q.question}</h3>
+                    <div class="answers">
+                        ${q.options.map((opt, i) => `
+                            <label>
+                                <input type="radio" name="question${index + 1}" value="${opt}">
+                                ${opt}
+                            </label>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+            $questionContainer.append(questionHTML);
+        });
+    }
+
+    // Handling the quiz submission with jQuery
+    $('#quiz-form').on('submit', function(event) {
+        event.preventDefault();  // Prevent form submission
+        let score = 0;
+        const randomQuestions = getRandomQuestions();
+        
+        randomQuestions.forEach((q, index) => {
+            const selectedAnswer = $(`input[name="question${index + 1}"]:checked`);
+            if (selectedAnswer.length && selectedAnswer.val() === q.answer) {
+                score++;
+            }
+        });
+
+        // Show score using jQuery
+        alert(`You scored ${score} out of 10`);
+
+        // Reset the form
+        $(this)[0].reset();
+    });
+
+    // Display the questions when the page loads
+    displayQuestions();
+</script>
+
+</body>
+</html>
